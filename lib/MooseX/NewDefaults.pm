@@ -155,6 +155,7 @@ e.g.
 
     # in some package with newdefaults used
     sub foo { 'a b c' }
+    __PACKAGE__->meta->make_immutable;
 
 =head1 NEW SUGAR
 
