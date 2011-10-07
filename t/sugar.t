@@ -17,7 +17,7 @@ use Test::Moose;
     package TestClassB;
     use Moose;
     use namespace::autoclean;
-    use MooseX::OverrideDefaults;
+    use MooseX::NewDefaults;
 
     extends 'TestClassA';
 

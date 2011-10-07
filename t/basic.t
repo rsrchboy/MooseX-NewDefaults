@@ -19,7 +19,7 @@ use Scalar::Util 'blessed';
     package TestClassB;
     use Moose;
     use namespace::autoclean;
-    use MooseX::OverrideDefaults;
+    use MooseX::NewDefaults;
 
     extends 'TestClassA';
 

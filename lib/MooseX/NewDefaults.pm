@@ -1,6 +1,6 @@
-package MooseX::OverrideDefaults;
+package MooseX::NewDefaults;
 
-# ABSTRACT: The great new MooseX::OverrideDefaults!
+# ABSTRACT: The great new MooseX::NewDefaults!
 
 use Moose 0.94 ();
 use namespace::autoclean;
@@ -8,7 +8,7 @@ use Moose::Exporter;
 use Moose::Util;
 
 {
-    package MooseX::OverrideDefaults::Trait::Class;
+    package MooseX::NewDefaults::Trait::Class;
     use Moose::Role;
     use namespace::autoclean;
 
@@ -95,13 +95,9 @@ sub default_for {
 }
 
 Moose::Exporter->setup_import_methods(
-    with_meta => [ qw{ default_for } ],
-
-    trait_aliasesXXX => [
-        [ 'MooseX::OverrideDefaults::Trait::Method' => 'AbstractMethod' ],
-    ],
+    with_meta       => [ qw{ default_for } ],
     class_metaroles => {
-        class => [ 'MooseX::OverrideDefaults::Trait::Class' ],
+        class => [ 'MooseX::NewDefaults::Trait::Class' ],
     },
 );
 
@@ -186,7 +182,7 @@ All complex software has bugs lurking in it, and this module is no exception.
 Bugs, feature requests and pull requests through GitHub are most welcome; our
 page and repo (same URI):
 
-    https://github.com/RsrchBoy/moosex-overridedefaults
+    https://github.com/RsrchBoy/moosex-newdefaults
 
 =cut
 
