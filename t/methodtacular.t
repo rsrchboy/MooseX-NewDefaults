@@ -14,18 +14,23 @@ use Scalar::Util 'blessed';
     use namespace::autoclean;
 
     has one => (is => 'ro', lazy => 1, default => sub { 'original default' });
+
+    has three => (is => 'ro', default => 'just to make sure');
 }
 {
     package TestClassB;
     use Moose;
     use namespace::autoclean;
-    use MooseX::NewDefaults;
+    use MooseX::NewDefaults::Magic;
 
     extends 'TestClassA';
 
     sub one { 'new default!' }
 
     sub two { 'twoooooooooo' }
+
+    # sanity check to make sure this is exported as we expect
+    default_for three => 'Something else';
 }
 
 my $A = TestClassA->new();
