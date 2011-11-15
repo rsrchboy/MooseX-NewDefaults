@@ -6,7 +6,7 @@ MooseX::NewDefaults - Alter attribute defaults with less pain
 
 =head1 VERSION
 
-version 0.002
+version 0.003
 
 =head1 SYNOPSIS
 
@@ -52,9 +52,15 @@ e.g.
 
 =head2 default_for
 
-This package exports one function, default_for().  This is shorthand sugar to
-give an attribute defined in a superclass a new default; it expects the name
-of an attribute and a legal value to be used as the new default.
+default_for() is a shortcut to extend an attribute to give it a new default;
+this default value may be any legal value for default options.
+
+    # attribute bar defined elsewhere (e.g. superclass)
+    default_for bar => 'new default';
+
+... is the same as:
+
+    has '+bar' => (default => 'new default');
 
 =head1 BUGS
 
