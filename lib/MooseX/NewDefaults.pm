@@ -56,12 +56,12 @@ __END__
 
 Ever start using a package from the CPAN, only to discover that it requires
 lots of subclassing and "has '+foo' => (default => ...)"?  It's not
-recommended Moose best practice, and it's certanly not the prettiest thing
+recommended Moose best practice, and it's certainly not the prettiest thing
 ever, either.
 
 That's where we come in.
 
-This package introduces new sugar that you can use in the baseclass,
+This package introduces new sugar that you can use in your class,
 default_for (as seen above).
 
 e.g.
@@ -91,7 +91,7 @@ this default value may be any legal value for default options.
 All complex software has bugs lurking in it, and this module is no exception.
 
 Bugs, feature requests and pull requests through GitHub are most welcome; our
-page and repo (same URI):
+page and repository (same URI):
 
     https://github.com/RsrchBoy/moosex-newdefaults
 

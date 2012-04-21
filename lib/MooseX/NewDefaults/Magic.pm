@@ -100,7 +100,7 @@ __END__
     package Two;
     use Moose;
     use namespace::autoclean;
-    use MooseX::NewDefaults::Mafic;
+    use MooseX::NewDefaults::Magic;
 
     # we include the default_for sugar
     default_for B => 'say oooh';
@@ -153,7 +153,7 @@ L<MooseX::NewDefaults>
 All complex software has bugs lurking in it, and this module is no exception.
 
 Bugs, feature requests and pull requests through GitHub are most welcome; our
-page and repo (same URI):
+page and repository (same URI):
 
     https://github.com/RsrchBoy/moosex-newdefaults
 
