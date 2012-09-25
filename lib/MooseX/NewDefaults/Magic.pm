@@ -101,6 +101,7 @@ __END__
     use Moose;
     use namespace::autoclean;
     use MooseX::NewDefaults::Magic;
+    extends 'One';
 
     # we include the default_for sugar
     default_for B => 'say oooh';
@@ -147,14 +148,5 @@ add_attribute("+$attribute_name" => %options).
 =head1 SEE ALSO
 
 L<MooseX::NewDefaults>
-
-=head1 BUGS
-
-All complex software has bugs lurking in it, and this module is no exception.
-
-Bugs, feature requests and pull requests through GitHub are most welcome; our
-page and repository (same URI):
-
-    https://github.com/RsrchBoy/moosex-newdefaults
 
 =cut

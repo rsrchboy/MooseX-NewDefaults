@@ -88,13 +88,4 @@ this default value may be any legal value for default options.
 
     has '+bar' => (default => 'new default');
 
-=head1 BUGS
-
-All complex software has bugs lurking in it, and this module is no exception.
-
-Bugs, feature requests and pull requests through GitHub are most welcome; our
-page and repository (same URI):
-
-    https://github.com/RsrchBoy/moosex-newdefaults
-
 =cut
