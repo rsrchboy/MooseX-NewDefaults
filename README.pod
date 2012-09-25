@@ -1,12 +1,16 @@
 =pod
 
+=encoding utf-8
+
+=for :stopwords Chris Weyl
+
 =head1 NAME
 
 MooseX::NewDefaults - Alter attribute defaults with less pain
 
 =head1 VERSION
 
-version 0.003
+This document describes version 0.004 of MooseX::NewDefaults - released September 24, 2012 as part of MooseX-NewDefaults.
 
 =head1 SYNOPSIS
 
@@ -22,6 +26,8 @@ version 0.003
     use namespace::autoclean;
     use MooseX::NewDefaults;
 
+    extends 'One';
+
     # sugar for defining a new default
     default_for A => sub { 'say oooh' };
 
@@ -32,12 +38,12 @@ version 0.003
 
 Ever start using a package from the CPAN, only to discover that it requires
 lots of subclassing and "has '+foo' => (default => ...)"?  It's not
-recommended Moose best practice, and it's certanly not the prettiest thing
+recommended Moose best practice, and it's certainly not the prettiest thing
 ever, either.
 
 That's where we come in.
 
-This package introduces new sugar that you can use in the baseclass,
+This package introduces new sugar that you can use in your class,
 default_for (as seen above).
 
 e.g.
@@ -62,14 +68,19 @@ this default value may be any legal value for default options.
 
     has '+bar' => (default => 'new default');
 
+=head1 SOURCE
+
+The development version is on github at L<http://github.com/RsrchBoy/moosex-newdefaults>
+and may be cloned from L<git://github.com/RsrchBoy/moosex-newdefaults.git>
+
 =head1 BUGS
 
-All complex software has bugs lurking in it, and this module is no exception.
+Please report any bugs or feature requests on the bugtracker website
+https://github.com/RsrchBoy/moosex-newdefaults/issues
 
-Bugs, feature requests and pull requests through GitHub are most welcome; our
-page and repo (same URI):
-
-    https://github.com/RsrchBoy/moosex-newdefaults
+When submitting a bug or request, please include a test-file or a
+patch to an existing test-file that illustrates the bug or desired
+feature.
 
 =head1 AUTHOR
 
