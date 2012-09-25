@@ -46,6 +46,8 @@ __END__
     use namespace::autoclean;
     use MooseX::NewDefaults;
 
+    extends 'One';
+
     # sugar for defining a new default
     default_for A => sub { 'say oooh' };
 
