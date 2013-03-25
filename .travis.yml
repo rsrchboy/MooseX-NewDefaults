@@ -1,0 +1,30 @@
+language: perl
+perl:
+   - "5.16"
+   - "5.14"
+   - "5.12"
+   - "5.10"
+
+install:
+   # git bits sometimes needed...
+   - git config user.name 'Travis-CI'
+   - git config user.email 'travis@nowhere.dne'
+
+   # echo "# Deal with all of the DZIL dependancies, quickly and quietly"
+   # export PERL_CPANM_OPT='--metacpan --skip-satisfied'
+   - export PERL_CPANM_OPT='--metacpan'
+   - rm -rf ~/.cpanm
+   - mkdir ~/.cpanm
+   - sudo mount tmpfs -t tmpfs ~/.cpanm
+   - export AUTOMATED_TESTING=1 HARNESS_OPTIONS=j10:c HARNESS_TIMER=1
+   - cpanm --quiet Dist::Zilla Module::Metadata
+   - dzil authordeps | grep -vP '[^\w:]' | cpanm --quiet --notest
+
+   # echo "# for LinkCheck"
+   - cpanp x
+
+   - dzil listdeps | grep -vP '[^\w:]' | cpanm --verbose
+
+script:
+   - export DZSIGN=archive
+   - dzil smoke --release --author
